@@ -14,11 +14,8 @@ object FileSystem extends App{
 
   breakable {
     while (true) {
-      state.show
+      state.show()
       val input = scanner.nextLine()
-      //if (input.toLowerCase == "exit" || input.toLowerCase == "quit") {
-      //  break
-      //}
       state = Command.from(input).apply(state)
     }
   }
