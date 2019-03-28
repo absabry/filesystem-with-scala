@@ -9,6 +9,8 @@ class Directory(override val parentPath: String,
 
   def asDirectory: Directory = this
 
+  def asFile: File =  throw new FileSystemException("A file cannot be converted to a directory")
+
   def hasEntry(name: String): Boolean =
     findEntry(name) != null
 
