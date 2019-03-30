@@ -42,9 +42,9 @@ abstract class CreateEntry(name:String) extends Command {
     if(wd.hasEntry(name))
       state.setMessage(s"Entry $name already exists")
     else if (name.contains(Directory.SEPARATOR))
-      state.setMessage(s"Entry $name already exists")
+      state.setMessage(s"Entry $name contains serparator which is forbideen in our case")
     else if (checkIllegal(name))
-      state.setMessage(s"$name : illegale entry name")
+      state.setMessage(s"$name : illegal entry name")
     else
       run(state, name)
 
